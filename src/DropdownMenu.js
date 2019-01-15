@@ -95,7 +95,7 @@ class DropdownMenu extends React.Component {
   }
 
   render() {
-    const {
+    let {
       open,
       pullRight,
       labelledBy,
@@ -105,6 +105,8 @@ class DropdownMenu extends React.Component {
       children,
       ...props
     } = this.props;
+
+    props = {...props, bsClass: 'dropdown-menu'};
 
     const [bsProps, elementProps] = splitBsPropsAndOmit(props, ['onClose']);
 
